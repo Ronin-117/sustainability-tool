@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GenAi</title>
+    </head>
+    <body>
+        <h1 style="background-color:DodgerBlue;">Welcome to the Generative AI Website</h1>
+        <form method ="post">
+            <textarea name="user_input" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        {% if response %}
+        <p style="color:DodgerBlue;"> {{ response}}</p>
+        {% endif %}
+    </body>
+</html>
