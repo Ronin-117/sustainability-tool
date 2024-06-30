@@ -1,3 +1,4 @@
+--upgrade pip
 Flask
 gunicorn
 pip install scikit-learn 
