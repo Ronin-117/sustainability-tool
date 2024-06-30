@@ -108,6 +108,52 @@ def Project_idea():
   
 @app.route("/Material_choosing", methods=['POST', 'GET'])
 def Material_choosing():
+  prompt_input_2_n = """suggest the best alternative of the input material or object or process and explain how is it better. If it is already sustainable then just tell its a good choice and explain why. Give a sustainability  outlook of the input material
+
+  Input: Is Plastic used for making bottles a good idea
+  Output: BAD CHOICE ,A good alternative is stainless steel bottles. Stainless steel bottles are better because they are durable, reusable, and do not leach harmful chemicals into the water. They also reduce plastic waste in landfills and oceans.
+
+  Input: Is using Styrofoam for Packaging good
+  Output:  BAD CHOICE ,A good alternative is biodegradable packaging made from cornstarch. Cornstarch packaging is better because it breaks down naturally in the environment without leaving toxic residues, reducing pollution and waste.
+
+  Input: Conventional Diesel Engines for making a car
+  Output: BAD CHOICE ,A good alternative is electric engines. Electric engines are better because they produce zero emissions, reducing air pollution and greenhouse gas emissions, contributing to cleaner air and combating climate change.
+
+  Input: Synthetic Fertilizers used instead of Organic fertilizers
+  Output: BAD CHOICE ,A good alternative is compost or organic fertilizers. Organic fertilizers are better because they improve soil health, promote biodiversity, and do not cause chemical run-off that can harm waterways and aquatic life.
+
+  Input: Single-Use Plastic Straws
+  Output: BAD CHOICE ,A good alternative is reusable metal straws. Metal straws are better because they can be used repeatedly, reducing plastic waste and environmental pollution. They are also easy to clean and durable.
+
+  Input: Bamboo for making chair
+  Output: GOOD CHOICE ,Bamboo is already a good choice. It is a highly sustainable material that grows rapidly without the need for pesticides or fertilizers. Bamboo is also biodegradable and has a lower environmental impact compared to traditional wood or plastic.
+
+  Input: Recycled Paper
+  Output: GOOD CHOICE ,Recycled paper is already a good choice. It reduces the need for virgin wood pulp, conserving trees and natural habitats. It also uses less energy and water during production and reduces landfill waste.
+
+  Input: LED Lighting
+  Output: GOOD CHOICE ,LED lighting is already a good choice. It is highly energy-efficient, using up to 80% less energy than traditional incandescent bulbs. LED lights also have a longer lifespan, reducing the need for frequent replacements and reducing waste.
+
+  Input: Solar Panels
+  Output: GOOD CHOICE ,Solar panels are already a good choice. They generate clean, renewable energy from the sun, reducing reliance on fossil fuels and decreasing greenhouse gas emissions. Solar panels also help in reducing electricity bills and promoting energy independence.
+
+  Input: Electric Bicycles
+  Output: GOOD CHOICE ,Electric bicycles are already a good choice. They provide an eco-friendly mode of transportation, reducing the reliance on cars and lowering carbon emissions. Electric bicycles also promote physical activity and can help alleviate traffic congestion.
+
+  Input: Styrofoam container for ice cream
+  Output:  A bad option but there isn't really any alternatives since this type if package specifically designed fo hold cold items like Icecreams etc.. However one could choose non disposable options such as bowls/cup which would still use some form o Packing materials though reduced significantly compare dto styros
+
+  """
+  if request.method == "POST" :
+    response=""
+    user_input = request.form.get('user_input')
+    if user_input:
+      # Proceed with analysis
+      prompt_input_2 = prompt_input_2_n
+      user_input= str(user_input)
+      prompt_input_2+='Input:\n'+user_input+'\n'+'Output: '
+      response = "\n" + model_1.generate_text(prompt=prompt_input_2, guardrails=True)
+      return render_template('mat_cho.html', response=response)
   return render_template("mat_cho.html")
 
 @app.route("/Credits", methods=['POST', 'GET'])

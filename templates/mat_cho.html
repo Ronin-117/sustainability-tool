@@ -14,29 +14,51 @@
       class="img-2"
     />
   </div>
+    <form method="post" >
   <div class="div-5">
     <div class="div-6">Discuss about your material choice :</div>
     <div class="div-7">
       <div class="div-8">
+        
         <div class="column">
-          <div class="div-9">Enter material details here :</div>
+          
+            <div class="column">
+              <textarea
+                name="user_input"
+                rows="20"
+                cols="150"
+                placeholder="Enter material details here :"
+              ></textarea>
+              
+            </div>
+          
         </div>
+        
         <div class="column-2">
           <div class="div-10">
-            <div class="div-11"><div class="div-12">ANALYSE</div></div>
-            <div class="div-13"><div class="div-14">UPDATE</div></div>
+            <button style="background: transparent; border: none !important;">
+              <div class="div-11"><div class="div-12">ANALYSE</div></div>
+            </button>
+            <button style="background: transparent; border: none !important;">
+              <div class="div-13"><div class="div-14">UPDATE</div></div>
+            </button>
+            
           </div>
         </div>
+        
       </div>
     </div>
-    <div class="div-15">Analysis :</div>
-    <div class="div-16">_</div>
+    <div class="div-99">Analysis :</div>
+    {% if response %}
+      <p style="color: gray"><h2>{{ response }}</h2></p>
+    {% endif %}
     <img
       loading="lazy"
       src="https://cdn.builder.io/api/v1/image/assets/TEMP/42e702de48890b91bf4190f5e67142d5614eb6254e3f98bc95fe2053a30d9742?apiKey=86de3601ddec4b0baad3d42dec8e3b11&"
       class="img-3"
     />
   </div>
+    </form>
 </div>
 <style>
   .div {
@@ -268,6 +290,13 @@
     align-items: center;
     justify-content: center;
     padding: 42px 60px;
+  }
+  .div-99 {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    letter-spacing: -1.76px;
+    margin-top: 54px;
+    font: 400 44px/90% Russo One, sans-serif;
   }
   @media (max-width: 991px) {
     .div-14 {
