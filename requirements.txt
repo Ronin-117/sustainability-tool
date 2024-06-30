@@ -1,6 +1,5 @@
 Flask
 gunicorn
-pip install datasets 
 pip install scikit-learn 
 pip install ibm-watson-machine-learning==1.0.349 
 ibm_watsonx_ai
