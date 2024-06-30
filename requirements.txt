@@ -1,7 +1,7 @@
 Flask
 gunicorn
-pip install datasets | tail -n 1
-pip install scikit-learn | tail -n 1
-pip install ibm-watson-machine-learning==1.0.349 | tail -n 1
+pip install datasets 
+pip install scikit-learn 
+pip install ibm-watson-machine-learning==1.0.349 
 ibm_watsonx_ai
 --upgrade numpy pandas
