@@ -23,6 +23,12 @@ parameters_2 = {
     "repetition_penalty": 1
 }
 
+parameters_3 = {
+    "decoding_method": "greedy",
+    "max_new_tokens": 8,
+    "repetition_penalty": 1
+}
+
 model_1 = Model(
     model_id=model_id,
     params=parameters_1,
@@ -41,7 +47,7 @@ model_2 = Model(
 
 model_3 = Model(
    model_id = model_id,
-   params = parameters_2,
+   params = parameters_3,
    credentials = get_credentials(),
    project_id="b357c08e-c45b-4721-8e03-ffb9c3fa4924",
     #space_id=space_id
@@ -176,8 +182,7 @@ def Project_idea():
         user_input= str(user_input)
         prompt_input_1+='Input:\n'+user_input+'\n'+'Output: '
         response = "\n" + model_1.generate_text(prompt=prompt_input_1, guardrails=True)
-        if "very bad" not in str(response).lower():
-         session['final_pi'] = response
+        session['final_pi'] = response
         return render_template('project_idea.html', response=response)
    #if request.method == "POST" and 'f2' in request.form:
       
@@ -317,9 +322,8 @@ def Material_choosing():
       user_input= str(user_input)
       prompt_input_2+='Input:\n'+user_input+'\n'+'Output: '
       response = model_1.generate_text(prompt=prompt_input_2, guardrails=True)
-      prompt_input_5 = prompt_input_3 +'\n' + response
+      prompt_input_5 = prompt_input_3 +'\n' + response+'\n'+'Output: '
       response_ne = model_3.generate_text(prompt=prompt_input_5, guardrails=True)
-      response_ne = "hghgghgh"+response_ne
       return render_template('mat_cho.html', response=response, new_mat=response_ne)
   return render_template("mat_cho.html")
 
