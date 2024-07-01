@@ -22,9 +22,10 @@
           <div class="column">
             <textarea
               name="user_input"
-              rows="20"
+              rows="7"
               cols="150"
               placeholder="Enter your project idea here..."
+              style="font-size: 20px; line-height: 1.5;"
             ></textarea>
             <div class="div-12"><button style="background: transparent;
                                   border: none !important;" type="submit"></button> </div>
@@ -57,7 +58,7 @@
         {% if response %}
           <p style="color: gray"><h2>{{ response }}</h2></p>
         {% endif %}
-        <form method='post' action="/Material_choosing" name="f2">
+        <form method='post' action="/Material_choosing" action="/Material_choosing" name="f2">
           <button style="background: transparent;
             border: none !important;" type="save" ><div class="div-10">
             <div class="div-11">SAVE</div>
