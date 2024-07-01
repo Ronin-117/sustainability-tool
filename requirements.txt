@@ -1,2 +1,3 @@
 Flask
 gunicorn
+ibm_watsonx_ai
