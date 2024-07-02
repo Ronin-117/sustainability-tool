@@ -38,7 +38,7 @@ This web application uses IBM Watsonx API to analyze project ideas and materials
    plaintext
    API_URL=https://us-south.ml.cloud.ibm.com
    API_KEY=your_ibm_watsonx_api_key
-   PROJECT_ID=b357c08e-c45b-4721-8e03-ffb9c3fa4924
+   PROJECT_ID= your_project_id
    
 
 4. Run the Flask application:
