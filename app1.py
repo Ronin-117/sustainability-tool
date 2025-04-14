@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_credentials():
     return {
         "url": "https://us-south.ml.cloud.ibm.com",
-        "apikey": "0jsxGfblp-HeuEwldAVpvsxrlNhT7Lp9y92JHFzkj0e6"
+        "apikey": "YOUR IBM API"
     }
 
 model_id = "ibm/granite-13b-chat-v2"
