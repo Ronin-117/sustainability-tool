@@ -1,5 +1,7 @@
 # Sustainable Project Management Tool
 
+![Website](https://raw.githubusercontent.com/Ronin-117/sustainability-tool/main/Voxia_img.jpg)
+
 ## Overview
 
 This web application uses IBM Watsonx API to analyze project ideas and materials, providing insights into their sustainability. Users can input project ideas and materials, and the application will classify their environmental impact and suggest more sustainable alternatives if necessary.
@@ -22,15 +24,17 @@ This web application uses IBM Watsonx API to analyze project ideas and materials
 
 1. Clone the repository:
 
-   bash
+   ```bash
    git clone https://github.com/yourusername/sustainable-project-management-tool.git
    cd sustainable-project-management-tool
+   ```
    
 
 2. Install the required Python packages:
 
-   bash
+   ```bash
    pip install -r requirements.txt
+   ```
    
 
 3. Create a `.env` file in the project directory and add your IBM Watsonx API credentials:
@@ -43,8 +47,9 @@ This web application uses IBM Watsonx API to analyze project ideas and materials
 
 4. Run the Flask application:
 
-   bash
+   ```bash
    python app.py
+   ```
    
 
 ## Usage
